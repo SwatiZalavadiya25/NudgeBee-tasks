@@ -1,4 +1,9 @@
-import { useState } from "react";
+// Task 2: Create nested checkbox reusable component in React
+// - If the parent checkbox is checked, then all the children checkboxes will be checked.
+// - If the parent checkbox is unchecked, then all the children checkboxes are unchecked.
+// - If some of the children checkboxes are checked, then the parent checkbox should show count next to value
+
+import React, { useState } from "react";
 
 const NestedCheckbx = () => {
   const [parentCheckStatus, setParentCheckStatus] = useState(false);
@@ -41,6 +46,7 @@ const NestedCheckbx = () => {
             checked={parentCheckStatus}
             onChange={handleParentCheckboxEvent}
             className="parent-check"
+            data-testid="parent-checkbox"
           />
           Parent Checkbox
         </label>
@@ -59,6 +65,7 @@ const NestedCheckbx = () => {
                 checked={checked}
                 onChange={() => handleChildcheckboxEvent(id)}
                 className="child-check"
+                data-testid={`child-checkbox-${id}`}
               />
               {label}
             </label>

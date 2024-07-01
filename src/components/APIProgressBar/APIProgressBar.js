@@ -1,3 +1,11 @@
+// Task 3: Create API progress bar component in React
+// Have thoughts on scenarios like -
+// - natural animation
+// - multiple API case
+// - error case, timeout
+// - fast & slow request
+// - API cancellation .etc
+
 import React, { useState, useEffect } from "react";
 
 const ProgressBar = () => {
@@ -22,7 +30,7 @@ const ProgressBar = () => {
         if (successfulResponses.length === apiRequests.length) {
           setMessage("All requests successful");
         } else {
-          setMessage("Request faild");
+          setMessage("Request failed");
           setHasError(true);
         }
       } catch (error) {
@@ -38,6 +46,7 @@ const ProgressBar = () => {
     <>
       <div className="progress-bar">
         <div
+          role="progressbar"
           className={hasError ? "progress-bar-error" : "progress-bar-fill"}
           style={{ width: `${progress}%` }}
         />

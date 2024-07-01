@@ -1,6 +1,6 @@
-import APIProgressBar from "./components/APIProgressBar";
-import NestedCheckbx from "./components/NestedCheckbox";
-import UnCompress from "./components/Uncompress";
+import APIProgressBar from "./components/APIProgressBar/APIProgressBar";
+import NestedCheckbx from "./components/NestedCheckbox/NestedCheckbox";
+import UnCompress from "./components/UnCompress/UnCompress";
 
 function App() {
   return (

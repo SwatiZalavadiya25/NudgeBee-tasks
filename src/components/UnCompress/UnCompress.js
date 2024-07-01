@@ -1,4 +1,10 @@
-import { useState } from "react";
+// Task 1: Given a compressed string, return its original form.
+// For example.
+// ```
+// uncompress('3(ab)') // 'ababab'
+// uncompress('3(ab2(c))') // 'abccabccabcc'
+
+import React, { useState } from "react";
 
 const UnCompress = () => {
   const [inputString, setInputString] = useState("");
@@ -31,10 +37,13 @@ const UnCompress = () => {
   return (
     <div className="uncompress-container">
       <input
+        type="text"
         name="inputString"
         value={inputString}
         placeholder="Enter input string"
         onChange={(e) => setInputString(e.target.value)}
+        id="string-input-field"
+        data-testid="string-input-field"
       />
       <button
         className="uncompress-btn"
@@ -44,6 +53,7 @@ const UnCompress = () => {
       >
         Uncompress
       </button>
+
       {outputString && <h3>Output: {outputString}</h3>}
     </div>
   );
